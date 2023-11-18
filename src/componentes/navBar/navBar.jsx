@@ -20,7 +20,6 @@ export default function NavBar() {
         </ul>
         <div style={{display: "flex", flexDirection: "row" , height: "100px"}}>
             <h1>{datos.usuario.nombre}</h1>
-            < Image src={datos.usuario.imagen}/>
         </div>
         </div>
     )}

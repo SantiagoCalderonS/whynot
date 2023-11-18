@@ -1,0 +1,38 @@
+
+
+generator client {
+  provider = "prisma-client-js"
+}
+ 
+datasource db {
+  provider = "postgresql"
+  url = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+}
+
+model Usuario {
+  id        Int      @id @default(autoincrement())
+  nombre      String
+  email     String   @unique
+  foto     String
+  admin     Boolean
+  torneos   UsuarioTorneo[]
+}
+
+model Torneo {
+  id        Int      @id @default(autoincrement())
+  evento      String
+  ubicacion     String
+  portada     String
+  usuarios   UsuarioTorneo[]
+}
+
+model UsuarioTorneo {
+  usuarioId        Int
+  usuario     Usuario @relation(fields: [usuarioId] , references : [id])
+
+  torneoId        Int
+  torneo      Torneo @relation(fields: [torneoId] , references : [id])
+
+  @@id([usuarioId, torneoId])
+}

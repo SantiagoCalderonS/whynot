@@ -6,6 +6,7 @@ export default async function Home() {
 const info = await getProps()
 
 console.log(info)
+//console.log(env("POSTGRES_PRISMA_URL"))
   return (
     <div>
       <h1>{info.title}</h1>
