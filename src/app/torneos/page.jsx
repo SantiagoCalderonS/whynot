@@ -11,7 +11,7 @@ export default function Torneos() {
         <ul>
             {torneos.map((T)=>{
                 return(
-                    <Torneo torneo={T}/>
+                    <Torneo torneo={T} key={T.ID}/>
                     )
             })}
         </ul>
