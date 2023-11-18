@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { datos } from "../../../datos";
 
 export default function NavBar() {
@@ -19,7 +20,7 @@ export default function NavBar() {
         </ul>
         <div style={{display: "flex", flexDirection: "row" , height: "100px"}}>
             <h1>{datos.usuario.nombre}</h1>
-            <img src={datos.usuario.imagen}/>
+            < Image src={datos.usuario.imagen}/>
         </div>
         </div>
     )}
