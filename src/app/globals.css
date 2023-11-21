@@ -8,13 +8,6 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
 
 body {
   color: rgb(var(--foreground-rgb));
@@ -26,3 +19,18 @@ body {
     rgb(var(--background-start-rgb));
 }
 */
+
+body{
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-image: url("https://images.ctfassets.net/390osprlshgj/3Kk9f5AYMptubUTJtmZoZl/0d32e9b422b267fcfeba3660ab78fc8e/mhf-sommer-sport-tennisball-foto-zillertaltourismus-christoph-johann.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100vh;
+  margin: 0;
+
+}

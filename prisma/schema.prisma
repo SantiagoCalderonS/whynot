@@ -15,15 +15,17 @@ model Usuario {
   nombre      String
   email     String   @unique
   foto     String
-  admin     Boolean
+  admin     Boolean? @default(false)
   torneos   UsuarioTorneo[]
 }
 
 model Torneo {
   id        Int      @id @default(autoincrement())
   evento      String
-  ubicacion     String
+  ubicacion   String
   portada     String
+  fecha       DateTime? @default(now())
+  estado      Boolean? @default(true)
   usuarios   UsuarioTorneo[]
 }
 

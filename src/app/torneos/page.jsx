@@ -7,8 +7,8 @@ export default function Torneos() {
     const torneos = datos.torneos
 
     return (
-        <div>
-        <ul>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+        <ul style={{padding: "0px"}}>
             {torneos.map((T)=>{
                 return(
                     <Torneo torneo={T} key={T.ID}/>

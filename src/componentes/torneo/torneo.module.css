@@ -1,0 +1,55 @@
+.div{
+    width: 90vw;
+    min-height: 30vh;
+    margin-top: 2%;
+    background-color: rgba(252, 252, 252, 0.829);
+    border: solid 1px green;
+    border-radius: 5px;
+}
+
+.div h1{
+    font-size: 4vw;
+}
+.div p{
+    font-size: 2vw;
+}
+
+.div img{
+    height: 40vh;
+    margin: 20px;
+    border-radius: 5px;
+}
+
+.div button{
+    color: black;
+    background-color:rgba(101, 255, 70, 0.5);
+    border: solid 1px green;
+    border-radius: 5px;
+    width: 200px;
+    height: 50px;
+    font-size: 2vw;
+}
+
+.datos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.texto{
+    width: 50%;
+    margin-left: 5%;
+}
+
+.lista{
+    width: 300px;
+    max-height: 300px;
+    overflow-y: scroll;
+    margin: 2px; 
+    background-color: rgba(252, 252, 252, 0.829);
+    border: solid 1px green;
+    position: absolute;
+    z-index: 99999;
+    border-radius: 5px;
+}
