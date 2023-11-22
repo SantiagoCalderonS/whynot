@@ -6,9 +6,11 @@ generator client {
  
 datasource db {
   provider = "postgresql"
-  url = env("POSTGRES_PRISMA_URL") // uses connection pooling
-  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+  url = env("URL_SUPABASE") // uses connection pooling
+  //directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
 }
+
+//sq7M3yi3WaXZk6wY
 
 model Usuario {
   id        Int      @id @default(autoincrement())

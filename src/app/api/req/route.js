@@ -2,12 +2,18 @@ import { NextResponse } from 'next/server';
 
 export async function POST(request){
 
-//como consigo el body de esta peticion?
-const body = await request.json();
+  try {
+    //como consigo el body de esta peticion?
+    const body = await request.json();
+    
+     return NextResponse.json( body, { status: 200 });
+    
+  } catch (error) {
+    return NextResponse.json( {msg: "error"} ,{ status: 500 });
+
+  }
 
 
-
-    return NextResponse.json( body, { status: 200 });
 } 
 
 

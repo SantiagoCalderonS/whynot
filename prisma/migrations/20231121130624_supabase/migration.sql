@@ -4,7 +4,7 @@ CREATE TABLE "Usuario" (
     "nombre" TEXT NOT NULL,
     "email" TEXT NOT NULL,
     "foto" TEXT NOT NULL,
-    "admin" BOOLEAN NOT NULL,
+    "admin" BOOLEAN DEFAULT false,
 
     CONSTRAINT "Usuario_pkey" PRIMARY KEY ("id")
 );
@@ -15,6 +15,8 @@ CREATE TABLE "Torneo" (
     "evento" TEXT NOT NULL,
     "ubicacion" TEXT NOT NULL,
     "portada" TEXT NOT NULL,
+    "fecha" TIMESTAMP(3) DEFAULT CURRENT_TIMESTAMP,
+    "estado" BOOLEAN DEFAULT true,
 
     CONSTRAINT "Torneo_pkey" PRIMARY KEY ("id")
 );

@@ -30,7 +30,7 @@ export async function GET(request, {params}) {
               admin: false,
               torneos: {
                 create:[
-                  {torneo: {connect: {id: 3}}}
+                  {torneo: {connect: {id: 1}}}
                 ]
               }
             },

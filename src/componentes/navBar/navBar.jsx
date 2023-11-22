@@ -1,8 +1,11 @@
+"use client"
+
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { datos } from "../../../datos";
 import style from "./navBar.module.css"
+import GoogleBoton from "../loginGoogle/loginGoogle";
 
 export default function NavBar() {
     return (
@@ -19,7 +22,7 @@ export default function NavBar() {
             
         </div>
        
-            <h1>{datos.usuario.nombre}</h1>
+           <GoogleBoton/>
        
         </div>
         </div>

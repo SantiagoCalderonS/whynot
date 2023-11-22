@@ -1,5 +1,10 @@
 export const datos = { 
-    usuario: {ID:1 , nombre: "PEPITO", gmail :"HGDSUFF@KJSC.COM", admin: true, imagen: "https://th.bing.com/th/id/R.84bbf87a8dc21795686a0cbff6ba955f?rik=Zw754LpOUzPnjA&riu=http%3a%2f%2fimages3.memedroid.com%2fimages%2fUPLOADED203%2f5e792c6452084.jpeg&ehk=Mkw7O2ay1TM57T%2bJieXFOPNMUUGBCbo7X73Qr0IA4t8%3d&risl=&pid=ImgRaw&r=0"},
+    usuario: {ID:1 , nombre: "PEPITO", gmail :"HGDSUFF@KJSC.COM", admin: true, 
+    torneos:[{evento:"sasdasdsadasd", ubicacion: "adsdadasadsda", estado: true },
+    {evento:"sasdasdsadasd", ubicacion: "adsdadasadsda", estado: false },
+    {evento:"sasdasdsadasd", ubicacion: "adsdadasadsda", estado: true }],
+    imagen: "https://th.bing.com/th/id/R.84bbf87a8dc21795686a0cbff6ba955f?rik=Zw754LpOUzPnjA&riu=http%3a%2f%2fimages3.memedroid.com%2fimages%2fUPLOADED203%2f5e792c6452084.jpeg&ehk=Mkw7O2ay1TM57T%2bJieXFOPNMUUGBCbo7X73Qr0IA4t8%3d&risl=&pid=ImgRaw&r=0"},
+    
 
     users:[
         {ID:1 , nombre: "PEPITO", gmail:"HGDSUFF@KJSC.COM", admin: true},
