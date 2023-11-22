@@ -1,4 +1,5 @@
 import { useSession, signIn, signOut } from "next-auth/react"
+import style from "./loginGoogle.module.css"
 
 export default function GoogleBoton() {
   const { data: session } = useSession()
@@ -10,14 +11,13 @@ export default function GoogleBoton() {
     console.log(session)
     return (
       <>
-        Signed in as {session.user.name} <br />
-        <button onClick={() => signOut()}>salir</button>
+        <button className={style.out} onClick={() => signOut()}>salir</button>
       </>
     )
   }
   return (
     <>
-      <button onClick={() => signIn()}>registrarse</button>
+      <button className={style.in} onClick={() => signIn()}>registrarse</button>
     </>
   )
 }

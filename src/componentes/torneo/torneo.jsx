@@ -12,7 +12,7 @@ export default function Torneo({torneo}) {
 
     //peticion ejemplo
     function req (){
-        fetch(`/api/req`,{
+        fetch(`/api/req`,{//para peticiones a si mismo no hay que poner origen, es como una etiqueta Link
             method: "POST",
             body: JSON.stringify({msg: "hola post"})
         }).then(response => response.json()).then(res=> setInfo(res)).catch(error => console.log(error))
@@ -29,8 +29,20 @@ export default function Torneo({torneo}) {
            
             <div className={style.datos}>
             <div className={style.texto}>
-            <h1> <Link href={`/torneos/${1}`}>{torneo.evento}</Link></h1>
-            <p>Ubicacion:{torneo.ubicacion}</p>
+            <h1>{torneo.evento}*</h1>
+            {torneo.estado? (<p style={{color:"green", float: "left"}}>activo</p>): <p style={{color: "red", float: "left"}}>finalizado</p>}
+
+            <h2>Ubicacion:{torneo.ubicacion}</h2>
+            {/*aqui hago una comparacion con el 
+            id del torneo y busco entre el array de torneos suscritos del usuario en
+            en el local host, si ya está el boton  desaparese o dice participando o algo asi*/}
+            {/*si estado es true Y la persona no está suscrita aparece*/}
+            {torneo.estado ?<button onClick={()=>{console.log("me registre")}}>registrarse</button> :
+             (<>{/*si esta activo, pero ya sucrito */}
+             { true ?<button onClick={()=>{console.log("cancele")}} style={{background: "red"}}>cancelar</button> :
+             <button onClick={()=>{console.log("expiro")}} style={{background: "red"}}>Terminado</button>}</>)
+             }
+        
         <button onClick={()=>{setMostrar(!mostrar) ; req()}}>participantes</button>
         {!mostrar? "" : (<ul className={style.lista}>
         {torneo.participantes.map((P)=>{
