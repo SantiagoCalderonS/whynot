@@ -12,7 +12,7 @@ export default function Torneo({torneo}) {
 
     //peticion ejemplo
     function req (){
-        fetch(`${DEV_URL}/api/req`,{
+        fetch(`/api/req`,{
             method: "POST",
             body: JSON.stringify({msg: "hola post"})
         }).then(response => response.json()).then(res=> setInfo(res)).catch(error => console.log(error))
