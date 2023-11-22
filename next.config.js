@@ -14,7 +14,7 @@ const nextConfig = {
                  },
                  {
                      key: "Access-Control-Allow-Origin",
-                     value: `https://whynot-prueba-5pls2wl2v-santiagocalderons.vercel.app` // reemplaza esto por tu origen real
+                     value: `*` // reemplaza esto por tu origen real
                  },
                  {
                      key: "Access-Control-Allow-Methods",
