@@ -3,6 +3,7 @@ import React, { useEffect } from "react"
 import style from "./torneo.module.css"
 import { useState } from "react"
 import Link from "next/link"
+import { DEV_URL, DEP_URL } from "../../../URLS"
 
 export default function Torneo({torneo}) {
 
@@ -11,7 +12,7 @@ export default function Torneo({torneo}) {
 
     //peticion ejemplo
     function req (){
-        fetch("http://localhost:3000/api/req",{
+        fetch(`${DEV_URL}/api/req`,{
             method: "POST",
             body: JSON.stringify({msg: "hola post"})
         }).then(response => response.json()).then(res=> setInfo(res)).catch(error => console.log(error))
@@ -34,7 +35,7 @@ export default function Torneo({torneo}) {
         {!mostrar? "" : (<ul className={style.lista}>
         {torneo.participantes.map((P)=>{
                 return(
-                    <div >
+                    <div key={P.ID}>
                         <h5>{P.nombre}</h5>
                     </div>
                     )
