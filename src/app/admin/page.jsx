@@ -12,9 +12,17 @@ export default function AdminPage() {
   const [show, setShow] = useState("torneos")
   const [isAdmin, setIsAdmin]= useState(false)//permiso para acceder
 
-  const usuario = JSON.parse(localStorage.getItem("usuario"))
+  //const usuario = JSON.parse(localStorage.getItem("usuario"))
   const { data: session } = useSession()
     const router = useRouter()
+
+    const [usuario, setUsuario] = useState(null);
+
+useEffect(() => {
+ if (typeof window !== 'undefined') {
+   setUsuario(JSON.parse(localStorage.getItem("usuario")));
+ }
+}, []);
 
     useEffect(()=>{//aqui se revisa si tiene permiso
 
