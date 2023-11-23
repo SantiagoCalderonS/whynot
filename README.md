@@ -59,9 +59,6 @@ La aplicación se desarrolló utilizando **Next.js** y cuenta con las siguientes
 **📍 TORNEOS |**: componente que renderizara la info del torneo pasado por props
 Aparte de mostrar la info, permite al usuario suscribirse, cancelar suscripciones y ver el listado de otros participantes
 
-##### FILTROS APLICADOS
-
-![principal](capturas/Captura484.png)
 <br />
 
 **📍 FORM PAGE (/form/[id]) |**: en esta ruta se muestra un form para crear o actualizar un torneo, cuenta con los siguientes inputs:
