@@ -16,15 +16,15 @@ export async function GET(request) {
       },
     });*/
     
-    const newUser = await prisma.usuario.findMany(
+    const usuarios = await prisma.usuario.findMany(
         {
         include: {torneos: {include : {torneo: true}}}
         }
        ) // devuelve un arreglo
        
-   console.log(newUser)
+   console.log(usuarios)
 
-    return NextResponse.json({ newUser }, { status: 200 });
+    return NextResponse.json({ usuarios }, { status: 200 });
     
   } catch (error) {
     return NextResponse.json({ error }, { status: 500 });

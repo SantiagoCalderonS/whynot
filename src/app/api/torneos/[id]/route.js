@@ -5,22 +5,23 @@ import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
 //obtendra un torneo por ID
-export async function GEsT(request, {params}) {
+export async function GET(request, {params}) {
   
-  const id = params.id
+  const id = Number(params.id)
+
   try {
-    const id_torneo = await prisma.torneo.findFirst(
+    const torneo = await prisma.torneo.findFirst(
       {
         where:{
-            id: 3 //id del torneo
+            id: id //id del torneo
         },
       include: {usuarios: {include : {usuario: true}}}
         
     }
      )
-   console.log(id_torneo)
+   
 
-    return NextResponse.json({ id_torneo }, { status: 200 });
+    return NextResponse.json({ torneo }, { status: 200 });
     
   } catch (error) {
     return NextResponse.json({ error }, { status: 500 });
@@ -31,50 +32,50 @@ export async function GEsT(request, {params}) {
 //para ACTUALIZAR UN TORNEO
 export async function PUT(request, {params}) {
   
-  const id = params.id
+  const id = Number(params.id)
+
+  const body = await request.json(); // nuevos datos
+  
+
   try {
-    const user = await prisma.torneo.update(
+    const torneo = await prisma.torneo.update(
         {
           where:{
-              id: 4
+              id: id//id del torneo
           },
-          data:{
-            evento: "dsdwas",
-            ubicacion: "ssssadadada",
-            portada: "adawyutyg32",
-          },
+          data: body,
         include: {usuarios: {include : {usuario: true}}}
           
       }
        )
 
-   console.log(user)
+   
 
-    return NextResponse.json({user }, { status: 200 });
+    return NextResponse.json({msg: "cambio realizado"}, { status: 200 });
     
   } catch (error) {
-    return NextResponse.json({ error }, { status: 500 });
+    return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
 
 //borrar el torneo
-export async function GET(request, {params}) {
+export async function DELETE(request, {params}) {//se eliminira cualquier registro o relacion del torneo
   
-  const id = params.id
+  const id = Number(params.id)
   try {
       const torneosBorrados = await prisma.usuarioTorneo.deleteMany({
           where: {
-            torneoId: 2, // aqui se d el id del torneo a borrar
+            torneoId: id, // aqui se da el id del torneo a borrar
           },
         })
         
         const torneoBorrado = await prisma.torneo.delete({
           where: {
-            id: 2,// lo mismo
+            id:id,// lo mismo
           },
         })
        
-   console.log(torneoBorrado)
+
 
     return NextResponse.json({torneoBorrado}, { status: 200 });
     

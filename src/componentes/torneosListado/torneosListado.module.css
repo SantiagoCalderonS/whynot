@@ -1,0 +1,66 @@
+.div{
+    width: 95vw;
+    min-height: 70vh;
+    margin-top: 2%;
+    background-color: rgba(252, 252, 252, 0.829);
+    border: solid 1px green;
+    border-radius: 5px;
+}
+
+.torneo{
+    width: 90vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    min-height: 10vh;
+    margin-top: 2%;
+    background-color: rgba(252, 252, 252, 0.829);
+    border: solid 1px green;
+    border-radius: 5px;
+}
+
+.div h1{
+    font-size: 4vw;
+
+}
+.div p{
+   
+}
+
+.botones{
+    min-height: 10vh;
+}
+
+.borrar{
+    color: black;
+    background-color:rgba(255, 0, 0, 0.5);
+    border: solid 1px red;
+    border-radius: 5px;
+    width: 100px;
+    height: 100%;
+    font-size: 2vw;
+    margin-right: 1vw;
+}
+
+.modificar{
+    color: black;
+    background-color:rgba(101, 255, 70, 0.5);
+    border: solid 1px green;
+    border-radius: 5px;
+    width: 100px;
+    height: 100%;
+    font-size: 2vw;
+    margin-right: 1vw;
+}
+
+.datos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.texto{
+    width: 50%;
+    margin-left: 5%;
+}

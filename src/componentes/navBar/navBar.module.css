@@ -34,12 +34,19 @@
 
 .link button{
     width: 200px;
-   
     height: 60px;
+    font-size: 3vw;
     color: white;
     background-color: rgba(101, 255, 70, 0.5);
     border: solid 1px green;
     border-radius: 5px;
+}
+
+.link button:hover{
+    transition-duration: 0.5s;
+cursor: pointer;
+color: green;
+background-color: rgb(255, 255, 255);
 }
 
 .link :hover{

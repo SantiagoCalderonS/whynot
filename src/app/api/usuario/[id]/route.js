@@ -7,41 +7,21 @@ const prisma = new PrismaClient()
 //este es el CRUD para un usuario en particular
 
 //obtener usuario POR ID, FUNCION ADMIN
-export async function GET(request, {params}) {
-  
-  const id = params.id
-    try {
+export async function GET(request, {params}) {//obtiene un usuario por ID //esto lo hago antes de entregar pero esta funcion creo que se usa
+
+  const id = Number(params.id)
+
+  try {
       const user = await prisma.usuario.findFirst(
           {
             where:{
-                id: 9
+                id: id
             },
           include: {torneos: {include : {torneo: true}}}
             
         }
          )
 
-        
-        console.log(id)
-         
-     /*if(user === null ){//si ese usuario no existe se crea
-        const newUser = await prisma.usuario.create({
-            data: {
-              nombre: 'sncnidajiott',
-              email: 'xelliottxdsdasdsddfsasfas@example-user.com',
-              foto: "sasasassdas",
-              admin: false,
-              torneos: {
-                create:[
-                  {torneo: {connect: {id: 3}}}
-                ]
-              }
-            }
-          }
-          );
-
-          return NextResponse.json({newUser }, { status: 200 });
-     }*/
   
       return NextResponse.json({user }, { status: 200 });
       
@@ -54,19 +34,21 @@ export async function GET(request, {params}) {
 
   //actualizar los registros (agregar uno mas) de un usuario, al registrarse a un torneo
   
-  export async function PUT(request, {params}) {
+  export async function PUT(request, {params}) { //para la accion de registrarse a un torne, establece una relacion entre ellos
     
-    const id = params.id//info de body
+    const id = Number(params.id)//info de body
+    const body = await request.json();
+
     try {
       const user = await prisma.usuario.update(
           {
             where:{
-                id: 11//id
+                id: id//id
             },
             data:{
                 torneos: {
                     create:[
-                      {torneo: {connect: {id: 2}}}
+                      {torneo: {connect: {id: body.id}}}
                     ]
                   },
             },
@@ -75,7 +57,6 @@ export async function GET(request, {params}) {
         }
          )
 
-     console.log(user)
   
       return NextResponse.json({user }, { status: 200 });
       
@@ -86,19 +67,20 @@ export async function GET(request, {params}) {
 
 
   // borrar usuario de la base FUNCION ADMIN
-  export async function DELETE(request, {params}) {
-    
-    const id = params.id
+  export async function DELETE(request, {params}) {// borra todo lo relacionado con un usuario segun du ID 
+
+    const id = Number(params.id)
+
     try {
         const torneosborrados = await prisma.usuarioTorneo.deleteMany({
             where: {
-              usuarioId: 10,
+              usuarioId: id,
             },
           })
           
           const usuarioBorrado = await prisma.usuario.delete({
             where: {
-              id: 10,
+              id: id,
             },
           })
          

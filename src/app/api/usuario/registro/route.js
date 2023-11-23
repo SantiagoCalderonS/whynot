@@ -5,16 +5,17 @@ const prisma = new PrismaClient()
 
 //Para cancelar participantes de torneos 
 
-export async function GET(request, {params}) {
-    
-    const id = params.id
+export async function DELETE(request) {
+
+  const body = await request.json();
+  
     try {
 
          const cancelado = await prisma.usuarioTorneo.delete({
             where:{
                 usuarioId_torneoId:{
-                    usuarioId: 11,
-                    torneoId: 3
+                    usuarioId: body.usuarioId,
+                    torneoId: body.torneoId
                 }
             }
          })
