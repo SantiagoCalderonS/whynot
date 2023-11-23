@@ -13,10 +13,6 @@ const providers ={
             GoogleProvider({
               clientId: GOOGLE_CLIENT_ID,
               clientSecret: GOOGLE_CLIENT_SECRET,
-            }),
-            GitHubProvider({
-              clientId: GITHUB_ID,
-              clientSecret: GITHUB_SECRET
             })
     ]
 }
