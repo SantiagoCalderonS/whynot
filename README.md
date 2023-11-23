@@ -56,12 +56,13 @@ La aplicación se desarrolló utilizando **Next.js** y cuenta con las siguientes
 -  cada torneo que aparece es una iteracion de un componente llamado torneo.
 
 <br />
+
 **📍 TORNEOS |**: componente que renderizara la info del torneo pasado por props
-Aparte de mostrar la info, permite al usuario suscribirse, cancelar suscripciones y ver el listado de otros participantes
+Aparte de mostrar la info, permite al usuario suscribirse, cancelar suscripciones y ver el listado de otros participantes.
 
 <br />
 
-**📍 FORM PAGE (/form/[id]) |**: en esta ruta se muestra un form para crear o actualizar un torneo, cuenta con los siguientes inputs:
+**📍 FORM PAGE (/form/[id]) |**: en esta ruta se muestra un form para crear o actualizar un torneo, cuenta con los siguientes inputs
 Este formulario es **controlado completamente con JavaScritp**. Cuenta con los siguientes campos:
 
 -  evento: string.
